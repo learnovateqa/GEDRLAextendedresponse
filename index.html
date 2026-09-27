@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GED RLA Extended Response Practice — Elevate with Ms. Maria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+
+<style>
+/* ============================================================
+   ELEVATE WITH MS. MARIA — GED RLA Extended Response Practice
+   Five practice sets · checks · results · submission · PDF
+   ONE FILE. Everything is inside — upload just this.
+   To change the articles, search for:  >>> EDIT HERE <<<
+   Your submission key goes in the TEACHER SETTINGS block below.
+   ============================================================ */
+:root{
+  --navy:#12224A; --navy-deep:#0B1430;
+  --ink:#12224A; --ink-soft:#4A5878; --ink-faint:#7C879F;
+  --ground:#F4F5F8; --surface:#FFFFFF; --surface-2:#F8F6F8;
+  --blush:#F3D9DC; --blush-lt:#FBF2F3;
+  --gold:#C9A227; --gold-deep:#8A6B14;
+  --good:#1F6F4A; --good-bg:#EAF4EE; --good-line:#BBD9C7;
+  --warn:#9B2226; --warn-bg:#FBEEEE; --warn-line:#E9C4C5;
+  --line:#DCDFE7; --line-strong:#C3C8D4;
+  --font:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+.hidden{display:none!important}
+
+/* ---------- top bar ---------- */
+.bar{background:var(--navy-deep);color:#fff;flex:0 0 auto;display:flex;align-items:center;
+  gap:.9rem;flex-wrap:wrap;padding:.55rem 1rem}
+.bar .brand{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.bar h1{font-size:.92rem;font-weight:600;margin:0}
+.bar .who{font-size:.75rem;color:#93A0BE}
+.spacer{flex:1 1 auto}
+.seg{display:inline-flex;border:1px solid #3B4A73;border-radius:2rem;overflow:hidden}
+.seg button{font:inherit;font-size:.78rem;font-weight:500;padding:.32rem .85rem;border:0;
+  background:transparent;color:#C7D0E4;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--navy-deep);font-weight:600}
+.seg button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.timer{display:flex;align-items:center;gap:.45rem;font-variant-numeric:tabular-nums;font-weight:600;
+  font-size:1rem;background:#1B2949;border:1px solid #3B4A73;border-radius:.4rem;padding:.22rem .55rem}
+.timer.low{background:#3A1D22;border-color:#7A3038;color:#FFC9CC}
+.timer .lbl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#93A0BE;font-weight:600}
+.btn{font:inherit;font-size:.79rem;font-weight:500;cursor:pointer;border:1px solid #3B4A73;
+  background:#1B2949;color:#DCE3F2;border-radius:.4rem;padding:.33rem .8rem}
+.btn:hover{border-color:var(--gold);color:#fff}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);font-weight:600}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* ---------- start screen ---------- */
+.start{flex:1 1 auto;overflow-y:auto;padding:2rem 1.25rem 4rem}
+.wrap{max-width:60rem;margin:0 auto}
+.start h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 .4rem;font-weight:700;letter-spacing:-.02em}
+.start .lede{color:var(--ink-soft);margin:0 0 1.8rem;max-width:44rem}
+.block{background:var(--surface);border:1px solid var(--line);border-radius:.7rem;padding:1.2rem 1.3rem;margin-bottom:1.2rem}
+.block h3{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 .8rem;font-weight:600}
+.fields{display:grid;gap:.8rem}
+@media(min-width:640px){.fields{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:.82rem;font-weight:500;margin-bottom:.25rem}
+input[type=text],input[type=email]{
+  width:100%;font:inherit;font-size:.95rem;padding:.55rem .7rem;border:1px solid var(--line-strong);
+  border-radius:.4rem;background:var(--surface);color:var(--ink)}
+input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.hint{font-size:.78rem;color:var(--ink-faint);margin:.3rem 0 0}
+
+.picks{display:grid;gap:.6rem}
+@media(min-width:720px){.picks{grid-template-columns:1fr 1fr}}
+.pick{display:flex;gap:.8rem;align-items:flex-start;text-align:left;width:100%;
+  font:inherit;cursor:pointer;background:var(--surface);border:1px solid var(--line);
+  border-radius:.55rem;padding:.75rem .85rem;color:var(--ink)}
+.pick:hover{border-color:var(--gold);background:var(--blush-lt)}
+.pick[aria-pressed="true"]{border-color:var(--gold);border-width:2px;background:var(--blush-lt)}
+.pick:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.pick .num{flex:0 0 auto;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--blush);
+  color:var(--gold-deep);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.pick[aria-pressed="true"] .num{background:var(--gold);color:var(--navy-deep)}
+.pick b{display:block;font-size:.93rem;font-weight:600}
+.pick span{font-size:.8rem;color:var(--ink-soft)}
+.pick .done{margin-left:auto;font-size:.72rem;color:var(--good);font-weight:600;white-space:nowrap}
+
+.modes{display:grid;gap:.6rem}
+@media(min-width:640px){.modes{grid-template-columns:1fr 1fr}}
+.mode{text-align:left;font:inherit;cursor:pointer;background:var(--surface);border:1px solid var(--line);
+  border-radius:.55rem;padding:.85rem .95rem;color:var(--ink)}
+.mode[aria-pressed="true"]{border-color:var(--gold);border-width:2px;background:var(--blush-lt)}
+.mode:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.mode b{display:block;font-size:.95rem;font-weight:600;margin-bottom:.15rem}
+.mode span{font-size:.82rem;color:var(--ink-soft)}
+.go{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-top:.4rem}
+.go .btn{background:var(--navy);border-color:var(--navy);color:#fff;font-size:.9rem;padding:.55rem 1.3rem}
+.go .btn:hover{background:var(--navy-deep)}
+.err{color:var(--warn);font-size:.83rem;font-weight:500}
+
+/* ---------- prompt + split ---------- */
+.prompt{background:var(--blush);color:var(--ink);flex:0 0 auto;padding:.65rem 1rem;font-size:.88rem;
+  border-bottom:1px solid var(--line)}
+.prompt b{font-weight:600}
+.split{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;min-height:0}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+.pane{display:flex;flex-direction:column;min-height:0;min-width:0;background:var(--surface)}
+.pane+.pane{border-left:1px solid var(--line)}
+@media(max-width:880px){.pane+.pane{border-left:0;border-top:1px solid var(--line)}}
+.tabs{display:flex;border-bottom:1px solid var(--line);background:var(--surface-2);flex:0 0 auto;overflow-x:auto}
+.tabs button{font:inherit;font-size:.82rem;font-weight:500;padding:.55rem 1rem;white-space:nowrap;border:0;
+  border-bottom:3px solid transparent;background:transparent;color:var(--ink-soft);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--gold);font-weight:600;background:var(--surface)}
+.tabs button:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.reading{overflow-y:auto;padding:1.1rem 1.3rem 3rem;flex:1 1 auto}
+.reading h2{font-size:1.12rem;margin:.2rem 0 .1rem;font-weight:600}
+.reading .by{color:var(--ink-faint);font-size:.85rem;margin:0 0 1rem}
+.reading p{margin:0 0 .9rem;max-width:38rem}
+.reading .pn{display:inline-block;min-width:1.5rem;font-weight:600;color:var(--gold-deep);
+  font-variant-numeric:tabular-nums;font-size:.85rem}
+
+.tools{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;padding:.45rem .7rem;
+  border-bottom:1px solid var(--line);background:var(--surface-2);flex:0 0 auto}
+.tbtn{font:inherit;font-size:.77rem;font-weight:500;cursor:pointer;border:1px solid var(--line-strong);
+  background:var(--surface);color:var(--ink-soft);border-radius:.35rem;padding:.28rem .62rem}
+.tbtn:hover{border-color:var(--gold);color:var(--ink)}
+.tbtn:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.tbtn.go{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+.count{margin-left:auto;font-size:.77rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+textarea{flex:1 1 auto;width:100%;border:0;resize:none;padding:1.1rem 1.3rem;font-family:var(--font);
+  font-size:15px;line-height:1.7;color:var(--ink);background:var(--surface)}
+textarea:focus{outline:none}
+textarea::placeholder{color:#AAB2C4}
+
+.helper{border-top:1px solid var(--line);background:var(--surface-2);flex:0 0 auto;max-height:40vh;overflow-y:auto}
+.helper h3{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);
+  margin:0;padding:.65rem 1rem .3rem;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:.32rem;padding:0 1rem .65rem}
+.chips button{font:inherit;font-size:.77rem;cursor:pointer;border:1px solid var(--line-strong);
+  background:var(--surface);color:var(--ink);border-radius:2rem;padding:.26rem .66rem}
+.chips button:hover{border-color:var(--gold);background:var(--blush-lt)}
+.chips button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+
+.checks{display:grid;gap:.38rem;padding:0 1rem 1rem}
+.check{display:grid;grid-template-columns:1.25rem 1fr;gap:.55rem;align-items:start;padding:.48rem .62rem;
+  border-radius:.4rem;background:var(--surface);border:1px solid var(--line);font-size:.83rem}
+.check.ok{background:var(--good-bg);border-color:var(--good-line)}
+.check.no{background:var(--warn-bg);border-color:var(--warn-line)}
+.check.tip{background:#FFF7E4;border-color:#E6D08A}
+.check .mk{font-weight:700;text-align:center;line-height:1.3}
+.check.ok .mk{color:var(--good)} .check.no .mk{color:var(--warn)} .check.tip .mk{color:var(--gold-deep)}
+.check em{font-style:normal;color:var(--ink);background:#fff;border:1px solid var(--line);
+  border-radius:.25rem;padding:0 .25rem;font-size:.78rem;margin-right:.25rem;display:inline-block}
+.toggle{display:flex;align-items:center;gap:.5rem;padding:0 1rem .7rem;font-size:.8rem;color:var(--ink-soft)}
+.toggle button{font:inherit;font-size:.77rem;font-weight:500;cursor:pointer;border:1px solid var(--line-strong);
+  background:var(--surface);color:var(--ink-soft);border-radius:2rem;padding:.26rem .7rem}
+.toggle button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.toggle button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.check b{font-weight:600;display:block}
+.check span{color:var(--ink-soft);font-size:.79rem}
+
+/* ---------- results ---------- */
+.results{flex:1 1 auto;overflow-y:auto;padding:1.8rem 1.25rem 4rem}
+.band{border-radius:.7rem;padding:1.2rem 1.3rem;margin-bottom:1.2rem;border:2px solid}
+.band h2{margin:0 0 .3rem;font-size:1.45rem;font-weight:700}
+.band p{margin:0;font-size:.92rem}
+.band.ready{background:var(--good-bg);border-color:var(--good);color:#12402B}
+.band.nearly{background:#FFF7E4;border-color:var(--gold);color:#5A4508}
+.band.not{background:var(--warn-bg);border-color:var(--warn);color:#5E1417}
+.rgrid{display:grid;gap:1.2rem}
+@media(min-width:900px){.rgrid{grid-template-columns:1.1fr 1fr}}
+.essay{white-space:pre-wrap;font-size:.92rem;line-height:1.7;background:var(--surface);
+  border:1px solid var(--line);border-radius:.55rem;padding:1rem 1.1rem;max-height:26rem;overflow-y:auto}
+.rowbtns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.rowbtns .btn{background:var(--surface);border-color:var(--line-strong);color:var(--ink)}
+.rowbtns .btn:hover{border-color:var(--gold)}
+.rowbtns .btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.note{font-size:.82rem;color:var(--ink-soft);margin-top:.9rem;max-width:40rem}
+.status{margin-top:.8rem;font-size:.86rem;font-weight:500}
+.status.ok{color:var(--good)} .status.bad{color:var(--warn)}
+
+/* ---------- dialogs ---------- */
+.veil{position:fixed;inset:0;background:rgba(11,20,48,.75);display:flex;align-items:center;
+  justify-content:center;padding:1.2rem;z-index:50}
+.veil[hidden]{display:none!important}
+.card{background:var(--surface);border-radius:.8rem;max-width:34rem;width:100%;padding:1.5rem 1.6rem;
+  box-shadow:0 20px 60px -20px rgba(0,0,0,.5);max-height:88vh;overflow-y:auto}
+.card h2{margin:0 0 .6rem;font-size:1.25rem;font-weight:600}
+.card p,.card ul{color:var(--ink-soft)} .card ul{margin:0 0 1rem;padding-left:1.1rem}
+.card li{margin-bottom:.3rem}
+.card .row{display:flex;gap:.6rem;flex-wrap:wrap}
+.card .btn{border-color:var(--line-strong);background:var(--surface);color:var(--ink)}
+.card .btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+
+.foot{flex:0 0 auto;background:var(--navy-deep);color:#8DA0C8;font-size:.71rem;padding:.42rem 1rem;
+  display:flex;gap:1rem;flex-wrap:wrap}
+
+@media(max-width:880px){
+  html,body{height:auto} body{min-height:100%}
+  .pane{min-height:auto} .reading{max-height:52vh} textarea{min-height:38vh}
+  .helper{max-height:none;overflow:visible} .bar h1{font-size:.86rem}
+}
+
+/* ---------- print / save as PDF ---------- */
+#printArea{display:none}
+@media print{
+  body{background:#fff;display:block}
+  .bar,.prompt,.split,.start,.results,.foot,.veil{display:none!important}
+  #printArea{display:block;padding:0;color:#000;font-size:11.5pt;line-height:1.55}
+  #printArea h1{font-size:15pt;margin:0 0 .2rem}
+  #printArea .meta{font-size:10pt;color:#333;margin:0 0 1.1rem;border-bottom:1pt solid #999;padding-bottom:.6rem}
+  #printArea .meta div{margin-bottom:.15rem}
+  #printArea h2{font-size:12pt;margin:1.1rem 0 .4rem;border-bottom:.5pt solid #bbb;padding-bottom:.15rem}
+  #printArea .body{white-space:pre-wrap}
+  #printArea table{border-collapse:collapse;width:100%;font-size:10pt;margin-top:.3rem}
+  #printArea td{border-bottom:.5pt solid #ccc;padding:.25rem .3rem;vertical-align:top}
+  #printArea td:first-child{width:1.2rem;font-weight:700}
+  #printArea .rubric td{height:2.1rem}
+  @page{margin:18mm}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<div class="bar" id="bar">
+  <div>
+    <div class="brand">Elevate with Ms. Maria</div>
+    <h1>GED® RLA — Extended Response Practice</h1>
+  </div>
+  <div class="who" id="whoLabel"></div>
+  <div class="spacer"></div>
+  <div class="seg hidden" id="modeSeg" role="group" aria-label="Mode">
+    <button id="mPractice" aria-pressed="true">Practice</button>
+    <button id="mTest" aria-pressed="false">Test · 45 min</button>
+  </div>
+  <div class="timer hidden" id="timerBox"><span class="lbl">Time</span><span id="clock">45:00</span></div>
+  <button class="btn hidden" id="startBtn">Start</button>
+  <button class="btn hidden" id="homeBtn">Menu</button>
+</div>
+
+<!-- ================= START SCREEN ================= -->
+<div class="start" id="screenStart">
+  <div class="wrap">
+    <h2>Five practice responses</h2>
+    <p class="lede">Each practice gives you two articles and one question: which writer proved their case?
+      Read both, plan your six boxes, then write. You will get a full check of your response at the end,
+      and you can send it to your teacher or save it as a PDF.</p>
+
+    <div class="block">
+      <h3>Step 1 — Who are you?</h3>
+      <div class="fields">
+        <div>
+          <label for="sName">Full name</label>
+          <input type="text" id="sName" autocomplete="name" placeholder="e.g. Nadia Hassan">
+        </div>
+        <div>
+          <label for="sEmail">Your email</label>
+          <input type="email" id="sEmail" autocomplete="email" placeholder="e.g. nadia@example.com">
+        </div>
+      </div>
+      <p class="hint">Your teacher needs these to return your marked work. Nothing is stored on this website.</p>
+    </div>
+
+    <div class="block">
+      <h3>Step 2 — Choose a practice</h3>
+      <div class="picks" id="picks"></div>
+    </div>
+
+    <div class="block">
+      <h3>Step 3 — Choose how to work</h3>
+      <div class="modes">
+        <button class="mode" id="optPractice" aria-pressed="true">
+          <b>Practice</b><span>Sentence starters and live checks while you write. No time limit. Start here.</span>
+        </button>
+        <button class="mode" id="optTest" aria-pressed="false">
+          <b>Test · 45 minutes</b><span>No help, no starters, clock running. The real thing. Use this when you are ready.</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="go">
+      <button class="btn" id="beginBtn">Begin</button>
+      <span class="err hidden" id="startErr"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= WRITING SCREEN ================= -->
+<div class="prompt hidden" id="promptBar"><b>Your task:</b> <span id="promptText"></span></div>
+
+<div class="split hidden" id="screenWrite">
+  <section class="pane" aria-label="Reading passages">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="reading" id="reading" tabindex="0"></div>
+  </section>
+  <section class="pane" aria-label="Your response">
+    <div class="tools">
+      <button class="tbtn" id="undoBtn">Undo</button>
+      <button class="tbtn" id="redoBtn">Redo</button>
+      <button class="tbtn" id="clearBtn">Clear</button>
+      <button class="tbtn go" id="finishBtn">Finish &amp; check</button>
+      <span class="count"><b id="words">0</b> words · <span id="paras">0</span> paragraphs</span>
+    </div>
+    <textarea id="editor" spellcheck="true"></textarea>
+    <div class="helper" id="helper">
+      <h3>Sentence starters — click to insert</h3>
+      <div class="chips" id="chips"></div>
+      <h3>Check your response as you write</h3>
+      <div class="checks" id="checks"></div>
+      <h3>Grammar — Trait 3</h3>
+      <div class="toggle">
+        <button id="gToggle" aria-pressed="false">Show grammar check</button>
+        <span>Write your argument first. Turn this on when you are editing.</span>
+      </div>
+      <div class="checks hidden" id="grammarLive"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= RESULTS SCREEN ================= -->
+<div class="results hidden" id="screenResults">
+  <div class="wrap">
+    <div class="band" id="band"><h2 id="bandTitle"></h2><p id="bandText"></p></div>
+    <div class="rgrid">
+      <div>
+        <div class="block" style="margin:0 0 1.2rem">
+          <h3>Argument and evidence — Traits 1 &amp; 2</h3>
+          <div class="checks" id="resultChecks" style="padding:0"></div>
+        </div>
+        <div class="block" style="margin:0">
+          <h3>Grammar and punctuation — Trait 3</h3>
+          <div class="checks" id="resultGrammar" style="padding:0"></div>
+          <p class="note" style="margin-top:.7rem">A computer finds some errors and misses others, and it
+            occasionally flags something that is fine. Check each one yourself before you change it.</p>
+        </div>
+      </div>
+      <div>
+        <div class="block" style="margin:0">
+          <h3>Your response</h3>
+          <div class="essay" id="essayOut"></div>
+          <div class="rowbtns">
+            <button class="btn primary" id="sendBtn">Send to my teacher</button>
+            <button class="btn" id="pdfBtn">Save as PDF</button>
+            <button class="btn" id="txtBtn">Download .txt</button>
+            <button class="btn" id="copyBtn">Copy</button>
+            <button class="btn" id="backBtn">Back to editing</button>
+          </div>
+          <div class="status hidden" id="sendStatus"></div>
+          <p class="note" id="honestNote"></p>
+        </div>
+      </div>
+    </div>
+    <div class="rowbtns">
+      <button class="btn primary" id="nextBtn">Next practice</button>
+      <button class="btn" id="menuBtn">Back to the menu</button>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <span>Practice tool for classroom use. Not affiliated with GED Testing Service.</span>
+  <span>GED® is a registered trademark of the American Council on Education.</span>
+</div>
+
+<!-- ================= DIALOGS ================= -->
+<div class="veil" id="testVeil" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="tvT">
+    <h2 id="tvT">Test mode — 45 minutes</h2>
+    <p>Once you start:</p>
+    <ul>
+      <li>The sentence starters and the live checks disappear.</li>
+      <li>The clock runs for 45 minutes and does not pause.</li>
+      <li>You read both articles, plan, and write the whole response.</li>
+    </ul>
+    <div class="row">
+      <button class="btn primary" id="tvStart">Start the 45 minutes</button>
+      <button class="btn" id="tvCancel">Not yet</button>
+    </div>
+  </div>
+</div>
+
+<div class="veil" id="doneVeil" hidden>
+  <div class="card" role="dialog" aria-modal="true" aria-labelledby="dvT">
+    <h2 id="dvT">Time.</h2>
+    <p id="dvBody"></p>
+    <div class="row"><button class="btn primary" id="dvGo">See my results</button></div>
+  </div>
+</div>
+
+<!-- ================= PRINT / PDF VIEW ================= -->
+<div id="printArea">
+  <h1>GED® RLA — Extended Response</h1>
+  <div class="meta">
+    <div><b>Student:</b> <span id="pName"></span></div>
+    <div><b>Email:</b> <span id="pEmail"></span></div>
+    <div><b>Practice:</b> <span id="pPractice"></span></div>
+    <div><b>Mode:</b> <span id="pMode"></span> &nbsp;·&nbsp; <b>Submitted:</b> <span id="pDate"></span></div>
+    <div><b>Length:</b> <span id="pLen"></span></div>
+  </div>
+  <h2>Response</h2>
+  <div class="body" id="pBody"></div>
+  <h2>Argument and evidence — Traits 1 &amp; 2</h2>
+  <table id="pChecks"></table>
+  <h2>Grammar and punctuation — Trait 3</h2>
+  <table id="pGrammar"></table>
+  <h2>Teacher marking — GED Extended Response traits</h2>
+  <table class="rubric">
+    <tr><td>0 1 2</td><td><b>Trait 1 — Creation of Arguments and Use of Evidence.</b> Makes a claim about which article is better supported; cites relevant evidence from both; analyses rather than summarises.</td></tr>
+    <tr><td>0 1 2</td><td><b>Trait 2 — Development of Ideas and Organizational Structure.</b> Clear progression; ideas developed rather than listed; purposeful paragraphs and transitions.</td></tr>
+    <tr><td>0 1 2</td><td><b>Trait 3 — Clarity and Command of Standard English Conventions.</b> Sentence structure, usage, mechanics.</td></tr>
+    <tr><td></td><td><b>Comments:</b></td></tr>
+  </table>
+</div>
+
+<script>
+/* ============================================================
+   >>> EDIT HERE <<<  — the five practice sets
+   Each set: two articles, five numbered paragraphs each.
+   Keep the shape. Paragraph numbers are added automatically.
+   ============================================================ */
+
+const PRACTICES = [
+
+/* ---------- 1 ---------- */
+{
+  id: 1,
+  topic: "Free bus fares",
+  prompt: "The two articles present different positions on whether the city should make bus travel free. " +
+          "Analyze both articles to determine which position is better supported. " +
+          "Use relevant and specific evidence from BOTH articles to support your response.",
+  authors: ["Ramos", "Whitfield"],
+  passages: [
+    { tab: "Article 1 — Ramos", title: "Make the Buses Free", author: "by Elena Ramos", paras: [
+      "Every weekday morning, about forty thousand people in this city climb onto a bus and pay a fare of two riyals. They do it because they have to get to work. The question in front of the council is not whether those trips will happen. It is whether we should keep charging for them — and whether charging is actually earning us anything.",
+      "We already have the answer, because we already ran the experiment. For six months last year, the transit authority suspended fares on the four Eastside routes. Ridership on those routes rose by thirty-one percent. Boarding times fell by an average of forty seconds per stop, because drivers were no longer handling cash and checking passes. Buses that had been running four minutes behind schedule began arriving on time. None of this is a prediction. It is a measurement, and it is published in the authority's own pilot report.",
+      "Collecting the fare is not free either. According to that same report, the transit authority spends about eighteen cents of every fare riyal on collection: the machines, the maintenance of the machines, the card system, the inspectors, and the accounting. Nearly one fare in five is consumed by the act of taking the fare. A business that spent eighteen percent of its revenue on the privilege of collecting that revenue would be asked some hard questions.",
+      "There is also the question of who pays. The transit department's 2024 rider survey found that forty-one percent of bus riders earn less than the city's median wage. For a worker on the lowest pay grade, the daily return fare is roughly one hour of work every week. A fare is not a small charge for everyone. It is a small charge for some people and a real one for others.",
+      "I will concede one thing to those who disagree: a free bus is not a bus that costs nothing. The money would come from general funds, and general funds are finite. But three cities that removed fares in the last decade still operated the same number of routes three years later, which suggests the collapse in service that critics predict has not actually happened where it has been tried. Meanwhile this city spends more each year resurfacing roads than the entire bus network costs to run."
+    ]},
+    { tab: "Article 2 — Whitfield", title: "Someone Has to Pay", author: "by Daniel Whitfield", paras: [
+      "Last Tuesday I waited eleven minutes for the number 12 bus, and when it finally arrived there was nowhere to sit. A woman with two shopping bags stood the whole way. This is the system that some people now want to expand by making it free. I would suggest we make it work first.",
+      "The argument for free fares always sounds generous, and it always ends the same way. Take away the fare and you take away the revenue. Take away the revenue and the service is cut. It happens every time, because it has to happen — buses cost money to run whether or not anyone pays to board them. A promise of free transport is really a promise that somebody else will pay, and that somebody is usually the taxpayer who never uses the bus at all.",
+      "There is a deeper problem, and everyone knows it even if nobody says it out loud. People do not value what they do not pay for. A fare, even a small one, tells the rider that this journey has a cost and that the vehicle they are sitting in belongs to something larger than themselves. Remove it and you invite a decline that no budget line can measure.",
+      "I will be fair about the numbers where I have them. The city's transit fund closed last year with a deficit of 12 million riyals, according to the council's own published accounts. That is a real figure and it is not improving. Into that deficit, supporters of free fares propose to pour a further loss of every riyal currently collected at the farebox. It is not obvious to me where that money is supposed to come from.",
+      "So I ask the council a simple question. If the buses are free, who pays for the driver? Who pays for the diesel, the depot, the mechanic at two in the morning? The people demanding free transport have not answered that, and until they do, this proposal is a slogan rather than a policy. My prediction is that within five years of going free, this city would be running fewer buses than it does today."
+    ]}
+  ]
+},
+
+/* ---------- 2 ---------- */
+{
+  id: 2,
+  topic: "Later school start times",
+  prompt: "The two articles present different positions on whether secondary schools should start the day later. " +
+          "Analyze both articles to determine which position is better supported. " +
+          "Use relevant and specific evidence from BOTH articles to support your response.",
+  authors: ["Sandhu", "Okafor"],
+  passages: [
+    { tab: "Article 1 — Sandhu", title: "Let Them Sleep", author: "by Dr. Priya Sandhu", paras: [
+      "Every argument about school start times eventually reaches the same objection: teenagers should simply go to bed earlier. I want to set that objection aside with evidence rather than opinion, because the biology here is not a matter of discipline.",
+      "During adolescence the body's sleep timing shifts later by roughly two hours and does not shift back until the early twenties. This is not laziness and it is not a habit. The National Sleep Research Centre's 2023 review of forty-one studies found the same delay in every country examined, including countries where children are put to bed strictly. Telling a fifteen-year-old to fall asleep at nine is closer to telling an adult to fall asleep at seven.",
+      "We also have local results. When the Northfield district moved its secondary start from 7:30 to 8:45 three years ago, average student sleep rose by thirty-four minutes on school nights. Unexcused absences fell by nineteen percent. The district's own attendance office published both figures, and neither has reversed in the three years since.",
+      "The safety evidence is harder to dismiss. In the two years after the change, road collisions involving drivers aged sixteen to eighteen during the morning commute fell by twenty-eight percent in that district, while remaining flat in the three neighbouring districts that kept the earlier start. Three separate districts, one change, one difference in outcome.",
+      "I accept that a later start creates real problems. Sports practice runs into the evening, and families who rely on older children for after-school care are genuinely inconvenienced. Those are costs, and they should be planned for rather than waved away. But they are scheduling costs, and scheduling can be changed. Adolescent sleep biology cannot."
+    ]},
+    { tab: "Article 2 — Okafor", title: "The Day Still Has Twenty-Four Hours", author: "by Martin Okafor", paras: [
+      "My daughter's school moved its start time back by an hour two years ago. She does not sleep more. She stays up later. Every parent I have spoken to says the same thing, and I suspect most parents reading this are nodding.",
+      "This is the flaw at the centre of the whole proposal. You cannot legislate what time a teenager falls asleep. Move the start time and the bedtime moves with it, because the phone does not switch itself off at ten o'clock. Everybody knows this. We are being asked to rebuild the school day around a change that students will simply absorb and then cancel out.",
+      "There is a cost, and it is not small. Our district's transport office reported that redrawing the bus contracts to stagger the new timetable added 1.4 million to the annual budget. That figure is in the published accounts and nobody disputes it. It came out of the same budget that pays for teaching assistants.",
+      "Then there is everything the timetable touches. Practice ends after dark. Part-time jobs become impossible. Younger siblings come home to an empty house because the older one is still at school. These are not small inconveniences to a working family; they are the difference between a week that functions and one that does not.",
+      "Schools exist to prepare young people for the world of work, and that world begins early. A student who cannot rise at half past six will struggle at eighteen when an employer expects it. My prediction is that within a decade the districts that made this change will quietly reverse it, and we will have spent a great deal of money learning something we could have reasoned out in advance."
+    ]}
+  ]
+},
+
+/* ---------- 3 ---------- */
+{
+  id: 3,
+  topic: "Monitoring staff computers",
+  prompt: "The two articles present different positions on whether employers should monitor what staff do on work computers. " +
+          "Analyze both articles to determine which position is better supported. " +
+          "Use relevant and specific evidence from BOTH articles to support your response.",
+  authors: ["Haddad", "Fischer"],
+  passages: [
+    { tab: "Article 1 — Haddad", title: "If You Have Nothing to Hide", author: "by Omar Haddad", paras: [
+      "A company laptop is company property. So is the hour the employee is being paid for. I find it strange that this has become controversial, and stranger still that the people most opposed to monitoring are usually the ones with the least to show for their afternoons.",
+      "Let me be concrete about what is at stake. A single data breach caused by careless staff behaviour cost one regional firm 3.2 million last year, according to the industry security report published in March. Monitoring software would have flagged the file transfer that caused it within seconds. That is a real number and it is the reason boards are asking this question at all.",
+      "Beyond security, there is the simple matter of fairness. In every office I have managed, a small number of people carried a larger share of the work while others spent the afternoon somewhere else entirely. Monitoring does not punish the diligent. It makes the difference visible, which is exactly what the diligent have always wanted.",
+      "Employees say monitoring destroys trust. I would say the opposite: it replaces a vague suspicion with a clear record. A manager who can see the work does not need to guess, and an employee who is doing the work has nothing to fear from being seen doing it. That is not surveillance. That is simply an accurate account of the day.",
+      "The objection is really about comfort, not principle. Nobody complains about the security camera at the office entrance, or the badge that records when they arrive. Extending the same ordinary accountability to the machine they work on all day is not a new intrusion. It is the same one, and I expect that within five years it will be as unremarkable as the badge."
+    ]},
+    { tab: "Article 2 — Fischer", title: "Watching Does Not Work", author: "by Lena Fischer", paras: [
+      "The case for monitoring rests on an assumption that sounds obvious and turns out to be false: that people who know they are watched do more work. The evidence points the other way, and it has for some time.",
+      "The Institute for Work Research tracked 2,400 employees across eleven firms for eighteen months, half of them under active monitoring software. Measured output in the monitored group was four percent lower at the end of the period. The researchers attributed the gap to what they called defensive activity — time spent appearing busy rather than being busy, which the software counts as work and a manager cannot distinguish.",
+      "Monitoring also costs money at the other end. In the same study, voluntary resignations in monitored teams ran at twenty-three percent annually against fourteen percent in unmonitored teams. Replacing a skilled employee costs somewhere between six and nine months of that employee's salary. A firm that introduces monitoring to protect against occasional waste frequently pays more in turnover than the waste was ever worth.",
+      "There is a narrower case that does hold. Where specific, regulated data is involved — medical records, client payment details — targeted logging of who opened which file is both lawful and sensible, and it is what the security incidents people cite actually involve. That is a different thing from recording keystrokes and taking screenshots every two minutes, and the two are routinely confused in this debate.",
+      "Two firms in the same sector, studied side by side, make the point. The one that introduced full monitoring reported a small drop in security incidents and a large rise in turnover. The one that introduced file-level logging alone reported the same drop in incidents and no change in turnover. If the goal is security, the narrow tool achieved it. The broad one mostly achieved resignations."
+    ]}
+  ]
+},
+
+/* ---------- 4 ---------- */
+{
+  id: 4,
+  topic: "The four-day work week",
+  prompt: "The two articles present different positions on whether companies should move to a four-day work week. " +
+          "Analyze both articles to determine which position is better supported. " +
+          "Use relevant and specific evidence from BOTH articles to support your response.",
+  authors: ["Lindqvist", "Mbeki"],
+  passages: [
+    { tab: "Article 1 — Lindqvist", title: "The Missing Fifth Day", author: "by Peter Lindqvist", paras: [
+      "I ran a manufacturing business for nineteen years. When people describe the four-day week to me, I recognise the tone immediately. It is the tone of someone who has never had to explain to a customer why the delivery did not arrive.",
+      "Work does not compress. That is the part the enthusiasts never address. A week contains a certain quantity of orders, calls, repairs and deliveries, and removing a day does not remove the work — it moves it. My people would have finished Thursday exhausted and started Monday behind. Anyone who has actually run a schedule knows this in their bones.",
+      "There is one figure I will put forward, because it is the one that matters. The national employers' federation reported in February that in continuous-operation sectors — manufacturing, logistics, healthcare — a four-day arrangement raised staffing costs by between nine and fourteen percent, because the fifth day still has to be covered by somebody. That is published and it is not disputed.",
+      "Notice which companies appear in the celebrated trials. Software firms. Design agencies. Consultancies. Places where the output is a document and the deadline is soft. Nobody is running these trials in a hospital ward or a container port, and there is a reason for that, even if the reports politely avoid saying so.",
+      "So I am sceptical, and I think the scepticism is earned. My expectation is that in ten years the four-day week will be remembered as something a certain kind of office did for a while, and the rest of the economy will still be working five days, because the work is still there on the fifth day and somebody still has to do it."
+    ]},
+    { tab: "Article 2 — Mbeki", title: "Four Days Is Enough", author: "by Grace Mbeki", paras: [
+      "The objection to a shorter week has always been that output would fall. That was a reasonable thing to assume before anybody tested it properly. It is no longer reasonable, because it has now been tested at scale.",
+      "The largest trial to date followed sixty-one companies and about 2,900 employees for six months, with no reduction in pay. Revenue across the participating firms rose by 1.4 percent on average against the same period the previous year. Fifty-six of the sixty-one companies chose to continue after the trial ended. Those figures come from the independent research team that ran the evaluation, not from the companies themselves.",
+      "The health results were larger than the financial ones. Days lost to sickness fell by sixty-five percent across the trial. Resignations fell by fifty-seven percent against the previous year. For an employer, those two numbers alone often exceed the cost of the fifth day, because absence and replacement hiring are among the most expensive things a company routinely pays for.",
+      "How the time is recovered is not mysterious, and the trial documented it: fewer and shorter meetings, less email, and a working day with fewer interruptions. Employees reported that the deadline did the work — given four days instead of five, the low-value activity was the first thing to go. This is a change in how time is used, not a demand that people work faster.",
+      "I want to be fair about the limits. Most participating firms were in offices and services, and the evaluation says plainly that continuous-operation sectors need a different model, usually shift redesign rather than a shorter week. That is a real qualification. But it narrows where the evidence applies; it does not undo the evidence itself."
+    ]}
+  ]
+},
+
+/* ---------- 5 ---------- */
+{
+  id: 5,
+  topic: "Self-checkout machines",
+  prompt: "The two articles present different positions on whether shops should rely on self-checkout machines. " +
+          "Analyze both articles to determine which position is better supported. " +
+          "Use relevant and specific evidence from BOTH articles to support your response.",
+  authors: ["Achterberg", "Reyes"],
+  passages: [
+    { tab: "Article 1 — Achterberg", title: "Who Is Actually Working Here?", author: "by Samuel Achterberg", paras: [
+      "Self-checkout arrived with a simple promise: shorter queues and lower costs. Fifteen years of trading data are now available, and on both counts the promise has held up poorly.",
+      "Start with losses. The national retail association's 2024 stocktake found that shops where more than half of transactions went through self-checkout recorded unrecovered stock losses of 3.9 percent of turnover, against 1.4 percent in shops with staffed lanes only. Most of that gap is not deliberate theft. It is scanning errors that nobody catches, because the person scanning has no training and no reason to check.",
+      "The staffing saving is also smaller than it appears. The same report found that each bank of six machines required an average of 1.6 staff present to clear errors, verify age-restricted items and reset frozen terminals. A staffed lane needs one. The machines did not remove the worker; they moved the worker to the middle of the floor and gave them six problems at once.",
+      "Customers have noticed. In a survey of 4,100 shoppers, sixty-seven percent said they would choose a staffed lane if the wait were equal, and the most common reason given was not sentiment but speed — a staffed lane scans faster than an untrained customer, which is unsurprising when one person does it all day and the other does it once a week.",
+      "The clearest evidence is what large retailers have actually done. Four national chains have removed or substantially reduced self-checkout since 2023, and each cited losses rather than customer complaints in its own statement. Companies do not reverse an expensive investment for sentimental reasons."
+    ]},
+    { tab: "Article 2 — Reyes", title: "Nobody Misses the Queue", author: "by Dana Reyes", paras: [
+      "I buy a sandwich and a coffee most weekdays. With a self-checkout I am out of the shop in under a minute. Without one I stand behind somebody doing a full weekly shop. I know which I prefer, and I have never met a customer who genuinely missed queuing.",
+      "The complaints about these machines come overwhelmingly from people who do not use them. Everyone knows the type of story that gets repeated — the unexpected item, the flashing light, the assistant who never comes. These stories travel because they are irritating, not because they are typical, and a technology is not judged fairly by its worst thirty seconds.",
+      "Retail runs on thin margins and this is the one place where a shop can save without raising a price. The sector's own trade magazine put the labour saving at around forty thousand per lane per year. In a business where net margin is commonly two or three percent, that is not a small figure, and it is the reason the machines exist at all.",
+      "The convenience argument is also a fairness argument, although it is rarely put that way. The shopper buying two items should not wait behind the shopper buying eighty. Self-checkout is what finally separated those two queues, and the person it helps most is the one with the least time to spare.",
+      "As for the errors, every new technology is clumsy at first and then it is not. Cash machines were once distrusted; now nobody thinks about them. Scanning will improve, the machines will get faster, and in ten years I expect the staffed lane will look the way the petrol attendant looks today — a pleasant memory that nobody is proposing to bring back."
+    ]}
+  ]
+}
+
+];
+
+/* Teacher note on design — the five sets deliberately alternate which article
+   is better supported, so students cannot learn "Article 1 always wins":
+   Set 1 → Article 1 (Ramos)      Set 2 → Article 1 (Sandhu)
+   Set 3 → Article 2 (Fischer)    Set 4 → Article 2 (Mbeki)
+   Set 5 → Article 1 (Achterberg)
+   In every set the weaker article still contains ONE genuinely sourced figure,
+   so students must concede a fair point rather than dismiss the author. */
+</script>
+<script>
+/* ============================================================
+   >>> TEACHER SETTINGS <<<
+   1. Go to web3forms.com, enter your email, and they send you a
+      free Access Key. Paste it between the quotes below.
+   2. Until you do, the "Send to my teacher" button falls back to
+      opening the student's own email app instead.
+   ============================================================ */
+const ACCESS_KEY   = "PASTE-YOUR-WEB3FORMS-ACCESS-KEY-HERE";
+const TEACHER_EMAIL = "mariaeftongga@gmail.com";
+const MINUTES = 45;
+
+const STARTERS = [
+  "— proves the point with ", "—'s argument depends on ",
+  "The writer states that “", "According to the second article, “",
+  "The author points out that “",
+  "This shows that ", "This matters because ", "In other words, ",
+  "It is true that ", "Even so, ", "For these reasons, "
+];
+
+/* ---------- state ---------- */
+const $ = id => document.getElementById(id);
+let student = { name:"", email:"" };
+let practice = null, mode = "practice", current = 0;
+let running = false, left = MINUTES*60, ticker = null;
+const doneSet = new Set();
+
+/* ---------- start screen ---------- */
+function renderPicks(){
+  const box = $("picks"); box.innerHTML = "";
+  if (typeof PRACTICES === "undefined" || !PRACTICES.length) {
+    box.innerHTML = '<p style="color:#9B2226;font-weight:500">' +
+      'The practice sets did not load. If you edited the file, check for a typo in the ' +
+      '<b>&gt;&gt;&gt; EDIT HERE &lt;&lt;&lt;</b> block near the bottom.</p>';
+    return;
+  }
+  PRACTICES.forEach(p => {
+    const b = document.createElement("button");
+    b.className = "pick"; b.setAttribute("aria-pressed", String(practice && practice.id === p.id));
+    b.innerHTML = '<span class="num"></span><span><b></b><span></span></span>';
+    b.querySelector(".num").textContent = p.id;
+    b.querySelector("b").textContent = "Practice " + p.id;
+    b.querySelectorAll("span")[2].textContent = p.topic;
+    if (doneSet.has(p.id)) {
+      const d = document.createElement("span"); d.className = "done"; d.textContent = "✓ done";
+      b.appendChild(d);
+    }
+    b.addEventListener("click", () => { practice = p; renderPicks(); });
+    box.appendChild(b);
+  });
+}
+function setStartMode(m){
+  mode = m;
+  $("optPractice").setAttribute("aria-pressed", String(m === "practice"));
+  $("optTest").setAttribute("aria-pressed", String(m === "test"));
+}
+$("optPractice").addEventListener("click", () => setStartMode("practice"));
+$("optTest").addEventListener("click", () => setStartMode("test"));
+
+$("beginBtn").addEventListener("click", () => {
+  const n = $("sName").value.trim(), e = $("sEmail").value.trim();
+  const err = $("startErr");
+  if (!n) { return showErr("Please type your name."); }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { return showErr("Please type a valid email address."); }
+  if (!practice) { return showErr("Please choose a practice."); }
+  err.classList.add("hidden");
+  student = { name:n, email:e };
+  $("whoLabel").textContent = n + " · Practice " + practice.id;
+  if (mode === "test") { $("testVeil").hidden = false; } else { openWriting(); }
+});
+function showErr(m){ const e = $("startErr"); e.textContent = m; e.classList.remove("hidden"); }
+
+/* ---------- screens ---------- */
+function show(which){
+  $("screenStart").classList.toggle("hidden", which !== "start");
+  $("screenWrite").classList.toggle("hidden", which !== "write");
+  $("promptBar").classList.toggle("hidden", which !== "write");
+  $("screenResults").classList.toggle("hidden", which !== "results");
+  const writing = which === "write";
+  $("modeSeg").classList.toggle("hidden", !writing);
+  $("timerBox").classList.toggle("hidden", !(writing && mode === "test"));
+  $("startBtn").classList.toggle("hidden", !(writing && mode === "test"));
+  $("homeBtn").classList.toggle("hidden", which === "start");
+  window.scrollTo(0,0);
+}
+
+function openWriting(){
+  current = 0;
+  $("promptText").textContent = practice.prompt;
+  $("mPractice").setAttribute("aria-pressed", String(mode === "practice"));
+  $("mTest").setAttribute("aria-pressed", String(mode === "test"));
+  $("helper").style.display = mode === "practice" ? "" : "none";
+  $("editor").placeholder = mode === "practice"
+    ? "Type your response here.\n\nTELL the judge what you will prove.\nSHOW the proof — a quotation from the article.\nPROVE it — say what the quotation means."
+    : "Type your response here.";
+  renderTabs(); renderPassage(); renderChips(); update();
+  show("write");
+  if (mode === "test") { reset(); start(); }
+  $("editor").focus();
+}
+
+/* ---------- passages ---------- */
+function renderTabs(){
+  const t = $("tabs"); t.innerHTML = "";
+  practice.passages.forEach((p,i) => {
+    const b = document.createElement("button");
+    b.textContent = p.tab; b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", String(i === current));
+    b.addEventListener("click", () => { current = i; renderTabs(); renderPassage(); });
+    t.appendChild(b);
+  });
+}
+function renderPassage(){
+  const p = practice.passages[current], r = $("reading");
+  r.innerHTML = "";
+  const h = document.createElement("h2"); h.textContent = p.title; r.appendChild(h);
+  const by = document.createElement("p"); by.className = "by"; by.textContent = p.author; r.appendChild(by);
+  p.paras.forEach((text,i) => {
+    const el = document.createElement("p");
+    const n = document.createElement("span"); n.className = "pn"; n.textContent = "(" + (i+1) + ")";
+    el.appendChild(n); el.appendChild(document.createTextNode(" " + text));
+    r.appendChild(el);
+  });
+  r.scrollTop = 0;
+}
+function renderChips(){
+  const c = $("chips"); c.innerHTML = "";
+  const names = practice.authors;
+  STARTERS.forEach(s => {
+    let txt = s.replace("—", names[0]);
+    const b = document.createElement("button");
+    b.textContent = txt.trim().replace(/“$/, "“…");
+    b.addEventListener("click", () => insert(txt));
+    c.appendChild(b);
+  });
+}
+function insert(text){
+  const ed = $("editor"), s = ed.selectionStart, e = ed.selectionEnd, v = ed.value;
+  let pre = v.slice(0,s);
+  if (pre.length && !/\s$/.test(pre)) pre += " ";
+  ed.value = pre + text + v.slice(e);
+  const pos = (pre + text).length;
+  ed.focus(); ed.setSelectionRange(pos,pos); update();
+}
+
+/* ---------- checks ---------- */
+function stats(){
+  const raw = $("editor").value;
+  const words = raw.trim() ? raw.trim().split(/\s+/).length : 0;
+  const paras = raw.split(/\n\s*\n/).map(s=>s.trim()).filter(Boolean).length;
+  const straight = (raw.match(/"/g)||[]).length, curly = (raw.match(/“/g)||[]).length;
+  const quotes = curly ? curly : Math.floor(straight/2);
+  /* Explanation moves. Deliberately a family of phrasings, not six fixed strings —
+     a strong writer varies the wording and should not be penalised for it. */
+  const EXPL_A = /\b(this|that|these|those|it)\s+(shows?|proves?|means?|demonstrates?|suggests?|indicates?|matters?|tells?|confirms?|establishes?|undermines?|weakens?|strengthens?|explains?|answers?)\b/gi;
+  const EXPL_B = /\bwhich\s+(shows?|proves?|means?|demonstrates?|suggests?|indicates?|undermines?|weakens?|strengthens?|confirms?|establishes?|answers?|removes?)\b/gi;
+  const EXPL_C = /\b(in other words|the point is|that is why|this is because|the significance)\b/gi;
+  const explain = ((raw.match(EXPL_A)||[]).length) + ((raw.match(EXPL_B)||[]).length) + ((raw.match(EXPL_C)||[]).length);
+  const signal  = (raw.match(/writes that|according to|points out|reports that|argues|claims|explains that|notes that|admits|warns|states that/gi)||[]).length;
+  const opinion = (raw.match(/\bI think\b|\bin my opinion\b|\bI believe\b|\bI agree\b|\bI feel\b/gi)||[]).length;
+  const both = practice.authors.every(a => new RegExp("\\b"+a+"\\b","i").test(raw));
+  return { raw, words, paras, quotes, explain, signal, opinion, both };
+}
+function checkList(){
+  const s = stats();
+  return [
+    { key:"length", ok:s.words>=200, t:"Long enough to develop the argument",
+      y:s.words+" words — a good length for a full response.",
+      n:s.words+" words. Aim for 250–400 across four paragraphs." },
+    { key:"both", ok:s.both, t:"Used BOTH articles",
+      y:"Both writers are discussed.",
+      n:"Only one writer is mentioned. Using one article limits your score." },
+    { key:"quotes", ok:s.quotes>=2, t:"At least two quotations",
+      y:s.quotes+" quotations found.",
+      n:"Found "+s.quotes+". Put the writer's exact words inside quotation marks." },
+    { key:"explain", ok:s.quotes>0 && s.explain>=s.quotes, t:"Every quotation is explained",
+      y:s.explain+" explanation sentences for "+s.quotes+" quotations.",
+      n:s.quotes+" quotations but only "+s.explain+" explanation sentences. After each one write “This shows that…”" },
+    { key:"signal", ok:s.signal>=2, t:"Quotations are introduced, not dropped",
+      y:"Each quotation has a lead-in.",
+      n:"Introduce each quotation: “The writer states that…”, “According to…”" },
+    { key:"opinion", ok:s.opinion===0, t:"No personal opinion",
+      y:"The argument rests on the articles, not on your own view.",
+      n:"Remove “I think” / “I agree”. The task asks who PROVED their case." },
+    { key:"paras", ok:s.paras>=3, t:"Organized into paragraphs",
+      y:s.paras+" paragraphs.",
+      n:"Only "+s.paras+". Aim for four: opening, two middle paragraphs, closing." }
+  ];
+}
+/* ---------- Trait 3: grammar and punctuation ----------
+   Two kinds of item:
+     HARD  — patterns that are wrong in Standard English (red)
+     CHECK — patterns worth a look; the writer decides (amber)
+   Deliberately conservative. Better to miss an error than to
+   tell a student something correct is wrong.                     */
+function grammarList(){
+  const raw = $("editor").value;
+  const out = [];
+  const hit = re => { const m = raw.match(re) || []; return m.slice(0,4); };
+
+  const of = hit(/\b(could|should|would|must|might)\s+of\b/gi);
+  out.push({ hard:true, ok:of.length===0, t:"“could of” is never correct",
+    y:"None found.", n:"Write “could have”, “should have”. It only sounds like “of”.", ex:of });
+
+  const lowI = (raw.match(/(?:^|[^A-Za-z'’])i(?=[\s',.!?’])/g) || []).length;
+  out.push({ hard:true, ok:lowI===0, t:"The word “I” is always a capital",
+    y:"Correct throughout.", n:"Capitalise every “I”.", ex:[] });
+
+  const lowStart = [];
+  raw.replace(/(?:^|[.!?]\s+)([a-z][a-z']{2,})/g, (m,w)=>{ if(lowStart.length<4) lowStart.push(w); return m; });
+  out.push({ hard:true, ok:lowStart.length===0, t:"Every sentence starts with a capital letter",
+    y:"Correct throughout.", n:"These sentences begin with a small letter.", ex:lowStart });
+
+  const SUB = /^(although|though|because|when|while|if|since|after|before|until|as|unless|whereas)\b/i;
+  const VERB = "is|are|was|were|has|have|had|will|would|can|could|does|did|do|shows|show|proves|prove|" +
+               "means|mean|makes|make|gives|give|costs|cost|seems|seem|becomes|become|remains|remain|" +
+               "creates|create|causes|cause|tells|tell|suggests|suggest|leaves|leave|happens|happen|" +
+               "works|work|needs|need|takes|take|comes|come|goes|go";
+  const SPLICE = new RegExp(",\\s+(it|this|that|they|he|she|we|there)\\s+(" + VERB + ")\\b", "i");
+  const splice = [];
+  raw.split(/(?<=[.!?])\s+/).forEach(sent => {
+    const t = sent.trim();
+    if (!t || SUB.test(t)) return;   /* "Because X, it makes sense" is correct, not a splice */
+    const m = t.match(SPLICE);
+    if (m && splice.length < 4) splice.push(m[0]);
+  });
+  out.push({ hard:true, ok:splice.length===0, t:"No comma splice",
+    y:"No two sentences are joined by a comma alone.",
+    n:"A comma cannot join two complete sentences. Use a full stop, a semicolon, or add “and / but / so”.", ex:splice });
+
+  const transSplice = hit(/,\s*(however|therefore|moreover|furthermore|consequently)\b/gi);
+  out.push({ hard:true, ok:transSplice.length===0, t:"“however / therefore” punctuated correctly",
+    y:"Correct.", n:"These words need a semicolon before and a comma after: “… ; however, …”", ex:transSplice });
+
+  const outQuote = hit(/[”"]\s*[,.](?!\s*[“"])/g);
+  out.push({ hard:true, ok:outQuote.length===0, t:"Commas and full stops go inside the quotation marks",
+    y:"Correct.", n:"Move the comma or full stop inside the closing quotation mark.", ex:outQuote });
+
+  const noSpace = hit(/[.!?,][A-Za-z]/g);
+  out.push({ hard:true, ok:noSpace.length===0, t:"A space after every full stop and comma",
+    y:"Correct.", n:"Add a space.", ex:noSpace });
+
+  /* amber — worth checking, not necessarily wrong */
+  const its = (raw.match(/\bit's\b/gi)||[]).length, itsP = (raw.match(/\bits\b/gi)||[]).length;
+  out.push({ hard:false, ok:(its+itsP)===0, t:"Check every “its” and “it’s”",
+    y:"Not used.", n:"You used “it’s” "+its+" time(s) and “its” "+itsP+
+      " time(s). Say “it is” in your head for each one. If it fits, you need the apostrophe.", ex:[] });
+
+  const homo = (raw.match(/\b(their|there|they're|your|you're|then|than|affect|effect)\b/gi)||[]);
+  out.push({ hard:false, ok:homo.length===0, t:"Check the easily-confused words",
+    y:"None used.", n:"You used "+homo.length+" of these: their / there / they’re, your / you’re, then / than, affect / effect. Test each one.", ex:[] });
+
+  const longs = [];
+  raw.split(/(?<=[.!?])\s+/).forEach(s=>{ const w=s.trim().split(/\s+/).length;
+    if(w>45 && longs.length<3) longs.push(w+" words"); });
+  out.push({ hard:false, ok:longs.length===0, t:"No sentence is too long to follow",
+    y:"Sentence length is comfortable.",
+    n:"These sentences run long. One idea per sentence reads better and is safer for Trait 3.", ex:longs });
+
+  return out;
+}
+function paintGrammar(target){
+  const box = $(target); box.innerHTML = "";
+  grammarList().forEach(it => {
+    const d = document.createElement("div");
+    d.className = "check " + (it.ok ? "ok" : (it.hard ? "no" : "tip"));
+    d.innerHTML = '<div class="mk">'+(it.ok?"✓":(it.hard?"!":"?"))+'</div><div><b></b><span></span></div>';
+    d.querySelector("b").textContent = it.t;
+    const sp = d.querySelector("span");
+    sp.textContent = it.ok ? it.y : it.n;
+    if (!it.ok && it.ex && it.ex.length) {
+      sp.appendChild(document.createElement("br"));
+      it.ex.forEach(x => {
+        const e = document.createElement("em");
+        e.textContent = String(x).trim().slice(0,40);
+        sp.appendChild(e);
+      });
+    }
+    box.appendChild(d);
+  });
+}
+let grammarOn = false;
+$("gToggle").addEventListener("click", () => {
+  grammarOn = !grammarOn;
+  $("gToggle").setAttribute("aria-pressed", String(grammarOn));
+  $("gToggle").textContent = grammarOn ? "Hide grammar check" : "Show grammar check";
+  $("grammarLive").classList.toggle("hidden", !grammarOn);
+  if (grammarOn) paintGrammar("grammarLive");
+});
+
+function paintChecks(target){
+  const box = $(target); box.innerHTML = "";
+  checkList().forEach(it => {
+    const d = document.createElement("div");
+    d.className = "check " + (it.ok ? "ok" : "no");
+    d.innerHTML = '<div class="mk">'+(it.ok?"✓":"!")+'</div><div><b></b><span></span></div>';
+    d.querySelector("b").textContent = it.t;
+    d.querySelector("span").textContent = it.ok ? it.y : it.n;
+    box.appendChild(d);
+  });
+}
+function update(){
+  const s = stats();
+  $("words").textContent = s.words; $("paras").textContent = s.paras;
+  if (mode === "practice") {
+    paintChecks("checks");
+    if (grammarOn) paintGrammar("grammarLive");
+  }
+}
+$("editor").addEventListener("input", update);
+
+/* ---------- timer ---------- */
+function paint(){
+  const m = Math.floor(left/60), sec = left%60;
+  $("clock").textContent = m+":"+String(sec).padStart(2,"0");
+  $("timerBox").classList.toggle("low", left<=300);
+}
+function start(){
+  if (running) { stop(); return; }
+  running = true; $("startBtn").textContent = "Pause";
+  ticker = setInterval(() => { left--; paint(); if (left<=0){ stop(); timeUp(); } }, 1000);
+}
+function stop(){ running=false; $("startBtn").textContent="Start"; clearInterval(ticker); ticker=null; }
+function reset(){ stop(); left = MINUTES*60; paint(); }
+function timeUp(){
+  const s = stats();
+  $("dvBody").textContent = "You wrote "+s.words+" words in "+s.paras+" paragraphs, with "+
+    s.quotes+" quotations and "+s.explain+" explanation sentences.";
+  $("doneVeil").hidden = false;
+}
+$("startBtn").addEventListener("click", start);
+$("dvGo").addEventListener("click", () => { $("doneVeil").hidden = true; finish(); });
+
+/* ---------- results ---------- */
+function finish(){
+  stop();
+  const s = stats(), list = checkList();
+  const passed = list.filter(c=>c.ok).length;
+  const gate = list.find(c=>c.key==="both").ok && list.find(c=>c.key==="explain").ok;
+  const band = $("band"), t = $("bandTitle"), p = $("bandText");
+  band.className = "band";
+  if (passed === list.length) {
+    band.classList.add("ready"); t.textContent = "Ready";
+    p.textContent = "Every check passed. This response has the shape and the evidence a GED grader is looking for. Send it to your teacher for the real marking.";
+  } else if (passed >= 5 && gate) {
+    band.classList.add("nearly"); t.textContent = "Nearly there";
+    p.textContent = "The main structure is in place. Fix the items marked below and this becomes a strong response.";
+  } else {
+    band.classList.add("not"); t.textContent = "Not ready yet";
+    p.textContent = "Something important is missing — look at the items marked below, fix them, and check again. Use “Back to editing”.";
+  }
+  paintChecks("resultChecks");
+  paintGrammar("resultGrammar");
+  $("essayOut").textContent = s.raw.trim() || "(nothing written yet)";
+  $("honestNote").textContent =
+    "These checks count things a computer can count — quotations, explanations, structure. " +
+    "They cannot judge whether your reasoning is good. Only your teacher can do that, which is why you should send it.";
+  $("sendStatus").classList.add("hidden");
+  doneSet.add(practice.id);
+  buildPrint();
+  show("results");
+}
+$("finishBtn").addEventListener("click", finish);
+$("backBtn").addEventListener("click", () => { show("write"); $("editor").focus(); });
+$("menuBtn").addEventListener("click", goMenu);
+$("homeBtn").addEventListener("click", goMenu);
+function goMenu(){
+  stop(); renderPicks(); show("start");
+}
+$("nextBtn").addEventListener("click", () => {
+  const i = PRACTICES.findIndex(p=>p.id===practice.id);
+  const next = PRACTICES[(i+1) % PRACTICES.length];
+  practice = next; $("editor").value = "";
+  $("whoLabel").textContent = student.name + " · Practice " + practice.id;
+  openWriting();
+});
+
+/* ---------- print / PDF ---------- */
+function buildPrint(){
+  const s = stats();
+  $("pName").textContent = student.name;
+  $("pEmail").textContent = student.email;
+  $("pPractice").textContent = "Practice " + practice.id + " — " + practice.topic;
+  $("pMode").textContent = mode === "test" ? "Test (45 minutes)" : "Practice";
+  $("pDate").textContent = new Date().toLocaleString();
+  $("pLen").textContent = s.words + " words, " + s.paras + " paragraphs, " +
+    s.quotes + " quotations, " + s.explain + " explanation sentences";
+  $("pBody").textContent = s.raw.trim();
+  const tbl = $("pChecks"); tbl.innerHTML = "";
+  checkList().forEach(c => {
+    const tr = document.createElement("tr");
+    const a = document.createElement("td"); a.textContent = c.ok ? "✓" : "✗";
+    const b = document.createElement("td"); b.textContent = c.t + " — " + (c.ok ? c.y : c.n);
+    tr.appendChild(a); tr.appendChild(b); tbl.appendChild(tr);
+  });
+}
+$("pdfBtn").addEventListener("click", () => { buildPrint(); window.print(); });
+
+/* ---------- submit ---------- */
+function plainReport(){
+  const s = stats();
+  let out = "GED RLA — Extended Response\n";
+  out += "Student: " + student.name + "\nEmail: " + student.email + "\n";
+  out += "Practice " + practice.id + " — " + practice.topic + "\n";
+  out += "Mode: " + (mode==="test" ? "Test (45 minutes)" : "Practice") + "\n";
+  out += "Submitted: " + new Date().toLocaleString() + "\n";
+  out += s.words + " words · " + s.paras + " paragraphs · " + s.quotes +
+         " quotations · " + s.explain + " explanation sentences\n\n";
+  out += "--- AUTOMATIC CHECKS ---\n";
+  checkList().forEach(c => { out += (c.ok ? "[PASS] " : "[FIX ] ") + c.t + " — " + (c.ok?c.y:c.n) + "\n"; });
+  out += "\n--- RESPONSE ---\n\n" + s.raw.trim() + "\n";
+  return out;
+}
+$("sendBtn").addEventListener("click", async () => {
+  const st = $("sendStatus"); st.className = "status"; st.classList.remove("hidden");
+  const s = stats();
+  if (!s.raw.trim()) { st.classList.add("bad"); st.textContent = "There is nothing to send yet."; return; }
+
+  if (!ACCESS_KEY || ACCESS_KEY.indexOf("PASTE-") === 0) { return mailtoFallback(st); }
+
+  st.textContent = "Sending…";
+  $("sendBtn").disabled = true;
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "GED RLA Practice " + practice.id + " — " + student.name,
+        from_name: "GED RLA Practice",
+        name: student.name,
+        email: student.email,
+        practice: "Practice " + practice.id + " — " + practice.topic,
+        mode: mode === "test" ? "Test (45 minutes)" : "Practice",
+        message: plainReport()
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      st.classList.add("ok");
+      st.textContent = "Sent. Your teacher has your response — keep a PDF copy for yourself too.";
+    } else { throw new Error(data.message || "rejected"); }
+  } catch (err) {
+    st.classList.add("bad");
+    st.textContent = "Could not send automatically. Opening your email app instead…";
+    setTimeout(() => mailtoFallback(st), 900);
+  } finally { $("sendBtn").disabled = false; }
+});
+function mailtoFallback(st){
+  const subject = "GED RLA Practice " + practice.id + " — " + student.name;
+  const href = "mailto:" + TEACHER_EMAIL +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(plainReport().slice(0, 1800));
+  st.className = "status"; st.classList.remove("hidden");
+  st.textContent = "Opening your email app. If nothing happens, use Save as PDF or Copy and send it yourself.";
+  window.location.href = href;
+}
+
+/* ---------- editor buttons ---------- */
+$("undoBtn").addEventListener("click", () => { $("editor").focus(); document.execCommand("undo"); update(); });
+$("redoBtn").addEventListener("click", () => { $("editor").focus(); document.execCommand("redo"); update(); });
+$("clearBtn").addEventListener("click", () => {
+  const ed = $("editor");
+  if (ed.value && !confirm("Clear everything you have written?")) return;
+  ed.value = ""; update(); ed.focus();
+});
+$("copyBtn").addEventListener("click", () => {
+  const ta = document.createElement("textarea");
+  ta.value = plainReport(); document.body.appendChild(ta); ta.select();
+  document.execCommand("copy"); document.body.removeChild(ta);
+  $("copyBtn").textContent = "Copied"; setTimeout(()=>{ $("copyBtn").textContent="Copy"; },1300);
+});
+$("txtBtn").addEventListener("click", () => {
+  const blob = new Blob([plainReport()], { type:"text/plain" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "GED-Practice-" + practice.id + "-" + student.name.replace(/\s+/g,"-") + ".txt";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+});
+
+/* ---------- mode switch while writing ---------- */
+$("mPractice").addEventListener("click", () => {
+  mode = "practice"; $("mPractice").setAttribute("aria-pressed","true");
+  $("mTest").setAttribute("aria-pressed","false");
+  $("helper").style.display = ""; stop();
+  $("timerBox").classList.add("hidden"); $("startBtn").classList.add("hidden");
+  update();
+});
+$("mTest").addEventListener("click", () => { $("testVeil").hidden = false; });
+$("tvCancel").addEventListener("click", () => { $("testVeil").hidden = true; });
+$("tvStart").addEventListener("click", () => {
+  $("testVeil").hidden = true; mode = "test";
+  $("mTest").setAttribute("aria-pressed","true"); $("mPractice").setAttribute("aria-pressed","false");
+  if ($("screenWrite").classList.contains("hidden")) { openWriting(); }
+  else {
+    $("helper").style.display = "none";
+    $("timerBox").classList.remove("hidden"); $("startBtn").classList.remove("hidden");
+    reset(); start(); $("editor").focus();
+  }
+});
+
+/* ---------- go ---------- */
+renderPicks(); paint(); show("start");
+</script>
+</body>
+</html>
